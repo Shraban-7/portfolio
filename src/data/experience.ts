@@ -78,10 +78,10 @@ export const timeline: TimelineItem[] = [
   {
     id: 'edu-1',
     type: 'education',
-    title: 'Computer Science / Software Engineering',
-    org: 'Your University',
-    period: '2018 — 2022',
+    title: 'Computer Science & Engineering',
+    org: 'Mymensingh Engineering College',
+    period: '2019 — 2024',
     description:
-      'Focused on software engineering, databases, and web application development.',
-  },
+      'Focused on CS fundamentals, software engineering, databases, AI, and web application development.',
+  }
 ]
