@@ -79,7 +79,7 @@ export const timeline: TimelineItem[] = [
     type: 'experience',
     title: 'Freelance Developer',
     org: 'Freelance',
-    period: 'Nov 2024 — Dec 2024',
+    period: 'Feb 2024 — Dec 2024',
     description:
       'Small university and personal builds — a security guard management app and an NID encryption project.',
   },
@@ -88,7 +88,7 @@ export const timeline: TimelineItem[] = [
     type: 'experience',
     title: 'Full Stack Developer',
     org: 'Web Arts Factory',
-    period: 'Mar 2023 — Nov 2024',
+    period: 'Mar 2023 — Feb 2024',
     description:
       'Delivered POS systems, agency websites, and a bank document management application for clients.',
   },
