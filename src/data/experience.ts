@@ -62,18 +62,35 @@ export const domains: Domain[] = [
 ]
 
 /**
- * NEW: employment / education timeline.
- * FLAG: replace placeholder entries with your real roles and schools.
+ * Employment / education timeline (newest first).
  */
 export const timeline: TimelineItem[] = [
   {
-    id: 'exp-1',
+    id: 'exp-spinner',
     type: 'experience',
     title: 'Full Stack Developer',
-    org: 'Freelance / Client Projects',
-    period: '2022 — Present',
+    org: 'Spinner Tech',
+    period: 'Jan 2025 — Present',
     description:
-      'Building E-commerce platforms, POS systems, SaaS inventory, HRM, and school/LMS tools with Laravel and modern frontends.',
+      'Desk role building and shipping production web systems — Laravel backends, modern frontends, and day-to-day product delivery.',
+  },
+  {
+    id: 'exp-freelance',
+    type: 'experience',
+    title: 'Freelance Full Stack Developer',
+    org: 'Freelance',
+    period: 'Nov 2024 — Dec 2024',
+    description:
+      'Independent client work across E-commerce, POS, SaaS, and management tools after leaving Web Arts Factory.',
+  },
+  {
+    id: 'exp-webarts',
+    type: 'experience',
+    title: 'Full Stack Developer',
+    org: 'Web Arts Factory',
+    period: 'Mar 2023 — Nov 2024',
+    description:
+      'Built and maintained web applications for clients — E-commerce, agency sites, and custom business software with Laravel and PHP.',
   },
   {
     id: 'edu-1',
@@ -83,5 +100,5 @@ export const timeline: TimelineItem[] = [
     period: '2019 — 2024',
     description:
       'Focused on CS fundamentals, software engineering, databases, AI, and web application development.',
-  }
+  },
 ]
