@@ -72,16 +72,16 @@ export const timeline: TimelineItem[] = [
     org: 'Spinner Tech',
     period: 'Jan 2025 — Present',
     description:
-      'Desk role building and shipping production web systems — Laravel backends, modern frontends, and day-to-day product delivery.',
+      'Building E-commerce platforms, POS systems, real-estate management, shopping & task sites, fantasy games, and social-media marketing CMS products.',
   },
   {
     id: 'exp-freelance',
     type: 'experience',
-    title: 'Freelance Full Stack Developer',
+    title: 'Freelance Developer',
     org: 'Freelance',
     period: 'Nov 2024 — Dec 2024',
     description:
-      'Independent client work across E-commerce, POS, SaaS, and management tools after leaving Web Arts Factory.',
+      'Small university and personal builds — a security guard management app and an NID encryption project.',
   },
   {
     id: 'exp-webarts',
@@ -90,7 +90,7 @@ export const timeline: TimelineItem[] = [
     org: 'Web Arts Factory',
     period: 'Mar 2023 — Nov 2024',
     description:
-      'Built and maintained web applications for clients — E-commerce, agency sites, and custom business software with Laravel and PHP.',
+      'Delivered POS systems, agency websites, and a bank document management application for clients.',
   },
   {
     id: 'edu-1',
