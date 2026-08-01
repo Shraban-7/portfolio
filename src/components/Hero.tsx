@@ -112,8 +112,9 @@ export function Hero() {
             </MagneticLink>
             <MagneticLink
               href={site.resumeUrl}
-              download
+              download={site.resumeFileName}
               className="btn-outline px-6 py-3 rounded-lg text-sm inline-flex items-center gap-2"
+              aria-label="Download resume PDF"
             >
               <IconDownload />
               Resume

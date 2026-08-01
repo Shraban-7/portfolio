@@ -6,7 +6,8 @@ export const site = {
   tagline:
     'Full Stack Developer building E-commerce, POS, SaaS, LMS, and management systems with Laravel, PHP, and modern frontends (Next.js, Vue, Livewire).',
   email: 'shakuatshraban@gmail.com',
-  resumeUrl: '/resume.pdf', // FLAG: add your resume to public/resume.pdf
+  resumeUrl: '/resume.pdf',
+  resumeFileName: 'Shraban_Full_Stack_Developer_Resume.pdf',
   social: {
     github: 'https://github.com/Shraban-7',
     linkedin: 'https://linkedin.com/in/', // FLAG: replace with your LinkedIn URL
