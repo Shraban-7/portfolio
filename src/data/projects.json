@@ -1,0 +1,82 @@
+[
+  {
+    "id": "multivendor",
+    "number": "01",
+    "title": "Multi-Vendor E-Commerce",
+    "description": "Domain-driven marketplace backend with seller portals, commission/payouts, variants, bulk catalog import, affiliates, and multi-warehouse shipping.",
+    "tech": ["Laravel 11", "PHP 8.3", "Blade", "Tailwind CSS", "Sanctum", "MySQL"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/multivendor-ecommerce",
+    "live": ""
+  },
+  {
+    "id": "zyvara",
+    "number": "02",
+    "title": "Zyvara Fashion E-Commerce",
+    "description": "Modern fashion store with integrated POS workflows, image processing, SSLCommerz payments, and courier shipping integrations.",
+    "tech": ["Laravel 10", "PHP", "Tailwind CSS", "Sanctum", "SSLCommerz", "Vite"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/zyvara-fashion-ecommerce",
+    "live": ""
+  },
+  {
+    "id": "restaurant-pos",
+    "number": "03",
+    "title": "Restaurant POS",
+    "description": "Full restaurant POS with kitchen display, floors/tables, QR ordering, recipe BOM stock deduction, offline PWA sync, and multi-branch reporting.",
+    "tech": ["Laravel 11", "PHP", "Alpine.js", "Tailwind CSS", "Reverb", "MySQL", "Docker"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/resturant-pos",
+    "live": ""
+  },
+  {
+    "id": "inventory-saas",
+    "number": "04",
+    "title": "Inventory SaaS",
+    "description": "Multi-tenant inventory ERP with sales/purchasing, double-entry ledger, RBAC, and a Next.js client over a Laravel API.",
+    "tech": ["Laravel 13", "Next.js", "TypeScript", "Tailwind CSS", "Spatie Permission", "MySQL"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/inventory-saas",
+    "live": ""
+  },
+  {
+    "id": "hrm",
+    "number": "05",
+    "title": "Enterprise HRM",
+    "description": "HR platform covering payroll & tax, attendance/leave, ATS careers portal, performance reviews, benefits, and audit trails.",
+    "tech": ["Laravel 13", "PHP 8.3", "Blade", "Tailwind CSS", "jQuery", "Vite", "MySQL"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/HRM",
+    "live": ""
+  },
+  {
+    "id": "school-sms",
+    "number": "06",
+    "title": "School Management System",
+    "description": "Single-school SMS for BD schools — public site, academics, exams/results, fees, attendance, and bilingual English/Bangla UI.",
+    "tech": ["Laravel 13", "Inertia.js", "Vue 3", "Tailwind CSS", "MySQL"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/school-management-system",
+    "live": ""
+  },
+  {
+    "id": "news-portal",
+    "number": "07",
+    "title": "News Portal",
+    "description": "Newspaper-style news website with dynamic content publishing built on Laravel and Livewire.",
+    "tech": ["Laravel 12", "PHP", "Livewire", "Tailwind CSS", "Vite"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/News-Portal",
+    "live": ""
+  },
+  {
+    "id": "lms-app",
+    "number": "08",
+    "title": "LMS App",
+    "description": "Learning management application for course delivery and student progress, built with Laravel and Tailwind.",
+    "tech": ["Laravel 13", "PHP 8.3", "Tailwind CSS", "Vite"],
+    "image": "/projects/placeholder.svg",
+    "github": "https://github.com/Shraban-7/Lms-app",
+    "live": ""
+  }
+]
