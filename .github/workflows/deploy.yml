@@ -3,7 +3,8 @@ name: Deploy React App via FTP
 on:
   push:
     branches:
-      - main  # Change to master if your default branch is master
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -16,8 +17,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
-          cache: 'npm'
+          node-version: 22
+          cache: npm
 
       - name: Install Dependencies
         run: npm ci
@@ -25,20 +26,35 @@ jobs:
       - name: Build React App
         run: npm run build
 
+      - name: Check FTP secrets
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          missing=0
+          [ -z "$FTP_SERVER" ] && echo "::error::FTP_SERVER secret is empty" && missing=1
+          [ -z "$FTP_USERNAME" ] && echo "::error::FTP_USERNAME secret is empty" && missing=1
+          [ -z "$FTP_PASSWORD" ] && echo "::error::FTP_PASSWORD secret is empty" && missing=1
+          exit $missing
+
       - name: Install LFTP
         run: sudo apt-get update && sudo apt-get install -y lftp
 
+      # FTP account already starts in public_html on cPanel.
+      # Do not upload to ./public_html/ or LFTP looks for public_html/public_html.
       - name: Deploy via LFTP
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -c "
-          set ftp:ssl-allow yes;
-          set ssl:verify-certificate no;
-          set ftp:passive-mode true;
-          open -u $FTP_USERNAME,'$FTP_PASSWORD' $FTP_SERVER;
-          mirror --reverse --delete --verbose ./dist/ ./public_html/;
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<'EOF'
+          set ftp:ssl-allow yes
+          set ssl:verify-certificate no
+          set ftp:passive-mode true
+          set net:max-retries 3
+          set net:timeout 20
+          mirror --reverse --delete --verbose dist/ .
           bye
-          "
+          EOF
