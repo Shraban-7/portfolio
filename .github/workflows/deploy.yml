@@ -33,28 +33,30 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           missing=0
-          [ -z "$FTP_SERVER" ] && echo "::error::FTP_SERVER secret is empty" && missing=1
-          [ -z "$FTP_USERNAME" ] && echo "::error::FTP_USERNAME secret is empty" && missing=1
-          [ -z "$FTP_PASSWORD" ] && echo "::error::FTP_PASSWORD secret is empty" && missing=1
-          exit $missing
+          if [ -z "$FTP_SERVER" ]; then
+            echo "::error::FTP_SERVER secret is missing in GitHub repository secrets"
+            missing=1
+          fi
+          if [ -z "$FTP_USERNAME" ]; then
+            echo "::error::FTP_USERNAME secret is missing in GitHub repository secrets"
+            missing=1
+          fi
+          if [ -z "$FTP_PASSWORD" ]; then
+            echo "::error::FTP_PASSWORD secret is missing in GitHub repository secrets"
+            missing=1
+          fi
+          if [ $missing -eq 1 ]; then
+            echo "Please set FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD under Repository Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
 
-      - name: Install LFTP
-        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          local-dir: ./dist/
+          server-dir: ./
 
-      # FTP account already starts in public_html on cPanel.
-      # Do not upload to ./public_html/ or LFTP looks for public_html/public_html.
-      - name: Deploy via LFTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<'EOF'
-          set ftp:ssl-allow yes
-          set ssl:verify-certificate no
-          set ftp:passive-mode true
-          set net:max-retries 3
-          set net:timeout 20
-          mirror --reverse --delete --verbose dist/ .
-          bye
-          EOF
