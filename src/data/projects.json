@@ -17,7 +17,7 @@
     "tech": ["Laravel 10", "PHP", "Tailwind CSS", "Sanctum", "SSLCommerz", "Vite"],
     "image": "/projects/placeholder.svg",
     "github": "https://github.com/Shraban-7/zyvara-fashion-ecommerce",
-    "live": ""
+    "live": "https://zyvara.devshraban.com/"
   },
   {
     "id": "restaurant-pos",
@@ -27,7 +27,7 @@
     "tech": ["Laravel 11", "PHP", "Alpine.js", "Tailwind CSS", "Reverb", "MySQL", "Docker"],
     "image": "/projects/placeholder.svg",
     "github": "https://github.com/Shraban-7/resturant-pos",
-    "live": ""
+    "live": "https://erestorapos.devshraban.com/login"
   },
   {
     "id": "inventory-saas",
@@ -57,7 +57,7 @@
     "tech": ["Laravel 13", "Inertia.js", "Vue 3", "Tailwind CSS", "MySQL"],
     "image": "/projects/placeholder.svg",
     "github": "https://github.com/Shraban-7/school-management-system",
-    "live": ""
+    "live": "https://sms.devshraban.com/login"
   },
   {
     "id": "news-portal",
